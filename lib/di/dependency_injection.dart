@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tip_calculator/core/data/shared_prefs.dart';
-import 'package:tip_calculator/core/network/network_info.dart';
 
 final sl = GetIt.instance;
 

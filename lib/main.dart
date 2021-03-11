@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:tip_calculator/GettingStartedScreen.dart';
-import 'package:tip_calculator/HomeScreen.dart';
 import "package:tip_calculator/di/dependency_injection.dart" as di;
 Future<void> main() async {
   await di.init();
