@@ -95,13 +95,18 @@ class _Loginstate extends State<LoginScreen> {
                               borderRadius: BorderRadius.circular(29),
                             ),
                             child: TextField(
+                              obscureText: true,
                               cursorColor: const Color(0xFF40B7A9),
                               decoration: InputDecoration(
+                                hintText: "Enter Your  Password",
                                 icon: Icon(
                                   Icons.lock,
+                                    color: const Color(0xFF40B7A9),
+                                ),
+                                suffixIcon: Icon(
+                                  Icons.visibility,
                                   color: const Color(0xFF40B7A9),
                                 ),
-                                hintText: "Enter Your Password",
                                 border: InputBorder.none,
                               ),
                             ),

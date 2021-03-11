@@ -178,6 +178,7 @@ class SignUpScreen extends StatefulWidget {
                               )
                             ],
                           )
+
                         ],
                       ),
                     )
