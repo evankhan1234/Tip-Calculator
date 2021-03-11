@@ -12,6 +12,8 @@ class Slide {
   });
 }
 
+
+
 final slideList = [
   Slide(
     imageUrl: 'https://etimg.etb2bimg.com/photo/75161189.cms',

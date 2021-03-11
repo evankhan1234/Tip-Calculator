@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tip_calculator/HomeScreen.dart';
-import 'package:tip_calculator/features/LoginScreen.dart';
+import 'package:tip_calculator/features/SignUpScreen.dart';
+import 'package:tip_calculator/features/sign_up/LoginScreen.dart';
 
 import 'Slide.dart';
 import 'SlideItem.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tip_calculator/features/home_screen_items.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: const Color(0xFF40B7A9),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Order'),
@@ -26,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       ),
+      body: _widgetOptions.elementAt(_selectedIndex),
     );
   }
   void _onItemTapped(int index){
@@ -33,5 +36,10 @@ class _HomeScreenState extends State<HomeScreen> {
       _selectedIndex = index;
     });
   }
+  List<Widget> _widgetOptions = <Widget>[
+    HomeScreenItems(),
+    HomeScreenItems(),
+    HomeScreenItems(),
+  ];
 }
 

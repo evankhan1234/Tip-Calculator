@@ -31,7 +31,7 @@ class SlideItem extends StatelessWidget {
           slideList[index].title,
           style: TextStyle(
             fontSize: 22,
-            color: const Color(0xFF40B7A9),
+
           ),
         ),
         SizedBox(
