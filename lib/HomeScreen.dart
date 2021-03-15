@@ -10,18 +10,23 @@ class HomeScreen extends StatefulWidget {
 final tabs = ['Home', 'Order', 'Bill', 'Settings'];
 
 class _HomeScreenState extends State<HomeScreen> {
-
+  int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
     HomeScreenItems(),
-    HomeScreenItems(),
-    HomeScreenItems(),
-    HomeScreenItems(),
+    Scaffold(body: Center(child: Text("1"))),
+    Scaffold(body: Center(child: Text("2"))),
+    Scaffold(body: Center(child: Text("3"))),
   ];
 
+  void _onItemTapped(int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
+
     return Scaffold(
 
       floatingActionButton: FloatingActionButton(
@@ -36,46 +41,46 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            TabItems(
-              text: tabs[0],
-              icon: Icons.home,
-              isSelected: _selectedIndex == 0,
-              onTap: () {
-                setState(() {
-                  _selectedIndex == 0;
-                });
+            InkWell(
+              onTap: (){
+                _onItemTapped(0);
               },
+              child: TabItems(
+                text: tabs[0],
+                icon: Icons.home,
+                isSelected: _selectedIndex == 0,
+              ),
             ),
-            TabItems(
-              text: tabs[1],
-              icon: Icons.shopping_cart,
-              isSelected: _selectedIndex == 1,
-              onTap: () {
-                setState(() {
-                  _selectedIndex == 1;
-                });
+            InkWell(
+              onTap: (){
+                _onItemTapped(1);
               },
+              child: TabItems(
+                text: tabs[1],
+                icon: Icons.shopping_cart,
+                isSelected: _selectedIndex == 1,
+              ),
             ),
             SizedBox(width: 10),
-            TabItems(
-              text: tabs[2],
-              icon: Icons.credit_card,
-              isSelected: _selectedIndex == 2,
-              onTap: () {
-                setState(() {
-                  _selectedIndex == 2;
-                });
+            InkWell(
+              onTap: (){
+                _onItemTapped(2);
               },
+              child: TabItems(
+                text: tabs[2],
+                icon: Icons.credit_card,
+                isSelected: _selectedIndex == 2,
+              ),
             ),
-            TabItems(
-              text: tabs[3],
-              icon: Icons.settings,
-              isSelected: _selectedIndex == 3,
-              onTap: () {
-                setState(() {
-                  _selectedIndex == 3;
-                });
+            InkWell(
+              onTap: (){
+                _onItemTapped(3);
               },
+              child: TabItems(
+                text: tabs[3],
+                icon: Icons.settings,
+                isSelected: _selectedIndex == 3,
+              ),
             ),
           ],
         ),
@@ -90,38 +95,34 @@ class TabItems extends StatelessWidget {
   final String text;
   final IconData icon;
   final bool isSelected;
-  final VoidCallback onTap;
 
   const TabItems(
       {Key? key,
       required this.text,
       required this.icon,
       required this.isSelected,
-      required this.onTap})
+      })
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(12, 6, 12, 6),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              icon,
-              color: isSelected ? Colors.white : Colors.grey,
-            ),
-            Text(
-              text,
-              style: TextStyle(
-                  color: isSelected ? Colors.white : Colors.grey,
-                  fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-                  fontSize: 12),
-            ),
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(12, 6, 12, 6),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            icon,
+            color: isSelected ? Colors.white : Colors.grey,
+          ),
+          Text(
+            text,
+            style: TextStyle(
+                color: isSelected ? Colors.white : Colors.grey,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                fontSize: 12),
+          ),
+        ],
       ),
     );
   }
