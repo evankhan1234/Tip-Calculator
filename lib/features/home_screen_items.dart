@@ -31,7 +31,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: CustomAppBar("Tip Calculator"),
+      appBar: CustomAppBar(),
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         slivers: [
@@ -61,7 +61,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Covid-19",
+              "Tip Calculator",
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -145,7 +145,40 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                   ],
                 ),
               ],
-            )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/chat.png",
+                      width: 50,
+                      height: 50,
+                    ),
+                    SizedBox(width: 4.0),
+                    Text(
+                      "Chat Room",
+                      style: TextStyle(color: const Color(0xFF40B7A9)),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Image.asset(
+                      "assets/images/debit.png",
+                      width: 50,
+                      height: 50,
+                    ),
+                    SizedBox(width: 4.0),
+                    Text(
+                      "Bill Payment ",
+                      style: TextStyle(color: const Color(0xFF40B7A9)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -298,10 +331,11 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
   SliverToBoxAdapter _reviewList() {
     return SliverToBoxAdapter(
       child: Container(
-        margin: const EdgeInsets.all(10.0),
+        margin: const EdgeInsets.all(20.0),
         padding: const EdgeInsets.all(10.0),
-        height: 155,
+        height: 180,
         child: ListView.builder(
+          shrinkWrap: true,
           clipBehavior: Clip.none,
           scrollDirection: Axis.horizontal,
           itemCount: slideList.length,
