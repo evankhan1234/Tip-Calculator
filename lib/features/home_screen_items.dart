@@ -36,9 +36,9 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         physics: ClampingScrollPhysics(),
         slivers: [
           _header(size.height),
-          _overView(size.height),
-          _carousalSlider(),
+          _overView(size.height, size.width),
           _buildYourOwnTest(size.height),
+          _carousalSlider(),
           _dotSlider(),
           _reviewList(),
         ],
@@ -98,7 +98,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
     );
   }
 
-  SliverToBoxAdapter _overView(double screenHeight) {
+  SliverToBoxAdapter _overView(double screenHeight, double screenWidth) {
     return SliverToBoxAdapter(
       child: Container(
         padding: const EdgeInsets.all(20.0),
@@ -114,68 +114,116 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
             ),
             const SizedBox(height: 10.0),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/images/piechart.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Tip Calculator",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
-                    ),
-                  ],
+                Container(
+                  margin: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('assets/images/facemask.png',
+                        width:40,
+                        height:40,
+                      ),
+                      Text(
+                        "Calculator",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/images/debit.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Bill Payment ",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
-                    ),
-                  ],
+                Container(
+                  margin: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlue,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('assets/images/facemask.png',
+                        width:40,
+                        height:40,
+                      ),
+                      Text(
+                        "Payment",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/images/chat.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Chat Room",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
-                    ),
-                  ],
+                Container(
+                  margin: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.purple,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('assets/images/facemask.png',
+                        width:40,
+                        height:40,
+                      ),
+                      Text(
+                        "Transfer",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/images/debit.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Bill Payment ",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
-                    ),
-                  ],
+                Container(
+                  margin: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('assets/images/facemask.png',
+                        width:40,
+                        height:40,
+                      ),
+                      Text(
+                        "Calculation",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -193,7 +241,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
           horizontal: 20.0,
         ),
         padding: const EdgeInsets.all(10.0),
-        height: screenHeight * 0.15,
+        height: screenHeight * 0.22,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xFFAD9FE4), Palette.primaryColor],
@@ -331,9 +379,9 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
   SliverToBoxAdapter _reviewList() {
     return SliverToBoxAdapter(
       child: Container(
-        margin: const EdgeInsets.all(20.0),
+        margin: const EdgeInsets.all(10.0),
         padding: const EdgeInsets.all(10.0),
-        height: 180,
+        height: 190,
         child: ListView.builder(
           shrinkWrap: true,
           clipBehavior: Clip.none,
@@ -350,7 +398,6 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
   Widget _dotSliderItems(int index) {
     return Center(
       child: Container(
-        height: 120,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -375,7 +422,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                     Text(
                       slideList[index].description,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 3,
+                      maxLines: 1,
                     ),
                   ],
                 ),
