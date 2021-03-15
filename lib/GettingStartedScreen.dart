@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tip_calculator/features/sign_up/LoginScreen.dart';
+import 'package:tip_calculator/palette.dart';
 
 import 'Slide.dart';
 import 'SlideItem.dart';
@@ -106,7 +107,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       borderRadius: BorderRadius.circular(5),
                     ),
                     padding: const EdgeInsets.all(15),
-                    color: const Color(0xFF40B7A9),
+                    color: Palette.primaryColor,
                     textColor: Colors.white,
                     onPressed: () {
               Navigator.pushReplacement(

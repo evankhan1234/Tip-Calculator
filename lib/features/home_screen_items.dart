@@ -73,7 +73,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Are you feeling sick?",
+                  "Hi Anna!!",
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 22.0,
@@ -82,7 +82,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Text(
-                  "If you feel sick with any covid symptoms, please call or text us immidiately.",
+                  "Welcome to the your daily calculation world.",
                   style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 15.0,
@@ -101,7 +101,18 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
   SliverToBoxAdapter _overView(double screenHeight, double screenWidth) {
     return SliverToBoxAdapter(
       child: Container(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.fromLTRB(20,10,18,3),
+        margin: const EdgeInsets.fromLTRB(20,10,20,0) ,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: [
+              BoxShadow(
+                  color: (Colors.grey[200])!,
+                  spreadRadius: 2.0,
+                  blurRadius: 2.0,
+                  offset: Offset.fromDirection(10))
+            ]),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -112,7 +123,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(height: 2.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -132,7 +143,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                         height:40,
                       ),
                       Text(
-                        "Calculator",
+                        "Calculator ",
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
@@ -158,7 +169,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                         height:40,
                       ),
                       Text(
-                        "Payment",
+                        "  Payment  ",
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
@@ -189,7 +200,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                         height:40,
                       ),
                       Text(
-                        "Transfer",
+                        "  Transfer  ",
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
@@ -251,13 +262,13 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Image.asset('assets/images/debit.png'),
+            Image.asset('assets/images/facemask.png'),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Do your own test!',
+                  'Covid 19',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
@@ -266,12 +277,36 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Text(
-                  'Follow the instructions\nto do your own test.',
+                  'All you need\nis stay at home.',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16.0,
                   ),
                   maxLines: 2,
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                FlatButton.icon(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 20.0,
+                  ),
+                  onPressed: () {},
+                  color: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  icon: const Icon(
+                    Icons.details,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                      'View Info',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                      )
+                  ),
+                  textColor: Colors.white,
                 ),
               ],
             )
@@ -328,6 +363,26 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                                         fit: BoxFit.cover,
                                       ),
                                     ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          color: Color(0xAA333639),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8),
+                                            child: Text(
+                                              '${item.title}',
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ],
                                 ),
                               );
@@ -355,7 +410,8 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         children: [
           Container(
             height: 120,
-            margin: const EdgeInsets.all(10.0),
+            margin: const EdgeInsets.fromLTRB(20,0,10,0),
+            padding: const EdgeInsets.all(10.0),
             child: PageView.builder(
                 onPageChanged: _onPageChanged,
                 controller: _pageController,
@@ -384,6 +440,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         height: 190,
         child: ListView.builder(
           shrinkWrap: true,
+          physics: const AlwaysScrollableScrollPhysics(),
           clipBehavior: Clip.none,
           scrollDirection: Axis.horizontal,
           itemCount: slideList.length,
@@ -401,10 +458,14 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
-              slideList[index].imageUrl,
-              width: 120,
-              height: 100,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.network(
+                slideList[index].imageUrl,
+                width: 120,
+                height: 100,
+                fit: BoxFit.fill,
+              ),
             ),
             SizedBox(width: 8.0),
             Expanded(

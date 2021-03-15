@@ -43,7 +43,6 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 setState(() {
                   _selectedIndex == 0;
-                  print('0');
                 });
               },
             ),
@@ -54,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 setState(() {
                   _selectedIndex == 1;
-                  print('1');
                 });
               },
             ),
@@ -66,7 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 setState(() {
                   _selectedIndex == 2;
-                  print('2');
                 });
               },
             ),
@@ -77,7 +74,6 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 setState(() {
                   _selectedIndex == 3;
-                  print('3');
                 });
               },
             ),
