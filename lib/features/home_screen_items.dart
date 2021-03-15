@@ -73,7 +73,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Are you feeling sick?",
+                  "Hi Anna!!",
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 22.0,
@@ -82,7 +82,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Text(
-                  "If you feel sick with any covid symptoms, please call or text us immidiately.",
+                  "Welcome to the your daily calculation world.",
                   style: const TextStyle(
                     color: Colors.white70,
                     fontSize: 15.0,
@@ -101,7 +101,18 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
   SliverToBoxAdapter _overView(double screenHeight) {
     return SliverToBoxAdapter(
       child: Container(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.fromLTRB(20,10,18,3),
+        margin: const EdgeInsets.fromLTRB(20,10,20,0) ,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: [
+              BoxShadow(
+                  color: (Colors.grey[200])!,
+                  spreadRadius: 2.0,
+                  blurRadius: 2.0,
+                  offset: Offset.fromDirection(10))
+            ]),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -112,68 +123,139 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const SizedBox(height: 10.0),
+            const SizedBox(height: 2.0),
+
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Row(
                   children: [
-                    Image.asset(
-                      "assets/images/piechart.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Tip Calculator",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
+                    Container(
+                      height: 90,
+                      width: 150,
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset('assets/images/facemask.png',
+                            width:40,
+                            height:40,
+                          ),
+                          Text(
+                            "Tip Calculator",
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    Image.asset(
-                      "assets/images/debit.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Bill Payment ",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
+                    Container(
+                      height: 90,
+                      width: 150,
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.lightBlue,
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset('assets/images/facemask.png',
+                            width:40,
+                            height:40,
+                          ),
+                          Text(
+                            "Bill Payment",
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Row(
                   children: [
-                    Image.asset(
-                      "assets/images/chat.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Chat Room",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
+                    Container(
+                      height: 90,
+                      width: 150,
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.purple,
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset('assets/images/facemask.png',
+                            width:40,
+                            height:40,
+                          ),
+                          Text(
+                            "Bank Transfer",
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    Image.asset(
-                      "assets/images/debit.png",
-                      width: 50,
-                      height: 50,
-                    ),
-                    SizedBox(width: 4.0),
-                    Text(
-                      "Bill Payment ",
-                      style: TextStyle(color: const Color(0xFF40B7A9)),
+                    Container(
+                      height: 90,
+                      width: 150,
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset('assets/images/facemask.png',
+                            width:40,
+                            height:40,
+                          ),
+                          Text(
+                            "Daily Calculation",
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -193,7 +275,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
           horizontal: 20.0,
         ),
         padding: const EdgeInsets.all(10.0),
-        height: screenHeight * 0.15,
+        height: screenHeight * 0.20,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xFFAD9FE4), Palette.primaryColor],
@@ -203,13 +285,13 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Image.asset('assets/images/debit.png'),
+            Image.asset('assets/images/facemask.png'),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Do your own test!',
+                  'Covid 19',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
@@ -218,12 +300,36 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Text(
-                  'Follow the instructions\nto do your own test.',
+                  'All you need\nis stay at home.',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16.0,
                   ),
                   maxLines: 2,
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                FlatButton.icon(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10.0,
+                    horizontal: 20.0,
+                  ),
+                  onPressed: () {},
+                  color: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  icon: const Icon(
+                    Icons.details,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                    'View Info',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    )
+                  ),
+                  textColor: Colors.white,
                 ),
               ],
             )
@@ -280,6 +386,26 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
                                         fit: BoxFit.cover,
                                       ),
                                     ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          color: Color(0xAA333639),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8),
+                                            child: Text(
+                                              '${item.title}',
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.bold
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    )
                                   ],
                                 ),
                               );
@@ -307,7 +433,8 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         children: [
           Container(
             height: 120,
-            margin: const EdgeInsets.all(10.0),
+            margin: const EdgeInsets.fromLTRB(20,0,10,0),
+            padding: const EdgeInsets.all(10.0),
             child: PageView.builder(
                 onPageChanged: _onPageChanged,
                 controller: _pageController,
@@ -336,6 +463,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         height: 180,
         child: ListView.builder(
           shrinkWrap: true,
+          physics: const AlwaysScrollableScrollPhysics(),
           clipBehavior: Clip.none,
           scrollDirection: Axis.horizontal,
           itemCount: slideList.length,
@@ -354,11 +482,16 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(
-              slideList[index].imageUrl,
-              width: 120,
-              height: 100,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.network(
+                slideList[index].imageUrl,
+                width: 120,
+                height: 100,
+                fit: BoxFit.fill,
+              ),
             ),
+
             SizedBox(width: 8.0),
             Expanded(
               child: Padding(

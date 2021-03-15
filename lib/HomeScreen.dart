@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tip_calculator/features/home_screen_items.dart';
+import 'package:tip_calculator/palette.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: const Color(0xFF40B7A9),
+        selectedItemColor:Palette.primaryColor,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Order'),

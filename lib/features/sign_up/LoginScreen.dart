@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tip_calculator/HomeScreen.dart';
 import 'package:tip_calculator/features/SignUpScreen.dart';
+import 'package:tip_calculator/palette.dart';
 
 
 
@@ -66,11 +67,11 @@ class _Loginstate extends State<LoginScreen> {
                               borderRadius: BorderRadius.circular(29),
                             ),
                             child: TextField(
-                              cursorColor: const Color(0xFF40B7A9),
+                              cursorColor: Palette.primaryColor,
                               decoration: InputDecoration(
                                 icon: Icon(
                                   Icons.email,
-                                  color: const Color(0xFF40B7A9),
+                                    color: Palette.primaryColor,
                                 ),
                                 hintText: "Enter Your Email",
                                 border: InputBorder.none,
@@ -96,16 +97,16 @@ class _Loginstate extends State<LoginScreen> {
                             ),
                             child: TextField(
                               obscureText: true,
-                              cursorColor: const Color(0xFF40B7A9),
+                              cursorColor: Palette.primaryColor,
                               decoration: InputDecoration(
                                 hintText: "Enter Your  Password",
                                 icon: Icon(
                                   Icons.lock,
-                                    color: const Color(0xFF40B7A9),
+                                  color: Palette.primaryColor,
                                 ),
                                 suffixIcon: Icon(
                                   Icons.visibility,
-                                  color: const Color(0xFF40B7A9),
+                                    color: Palette.primaryColor,
                                 ),
                                 border: InputBorder.none,
                               ),
@@ -121,7 +122,7 @@ class _Loginstate extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(29),
                             child: FlatButton(
                               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                              color: const Color(0xFF40B7A9),
+                              color: Palette.primaryColor,
 
                               onPressed: () {
                                 Navigator.pushReplacement(
@@ -140,7 +141,7 @@ class _Loginstate extends State<LoginScreen> {
                           children: <Widget>[
                             Text(
                               "Don’t have an Account ? ",
-                              style: TextStyle(color: const Color(0xFF40B7A9)),
+                              style: TextStyle(color: Palette.primaryColor),
                             ),
                             GestureDetector(
                               onTap: () {
@@ -150,7 +151,7 @@ class _Loginstate extends State<LoginScreen> {
                               child: Text(
                                 "Sign Up",
                                 style: TextStyle(
-                                  color: const Color(0xFF40B7A9),
+                                  color: Palette.primaryColor,
                                   fontWeight: FontWeight.bold,
 
                                 ),
