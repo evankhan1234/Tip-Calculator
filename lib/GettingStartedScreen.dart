@@ -78,9 +78,9 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                             children: <Widget>[
                               for(int i = 0; i<slideList.length; i++)
                                 if( i == _currentPage )
-                                  SlideDots(true)
+                                  SlideDots(true, 12)
                                 else
-                                  SlideDots(false)
+                                  SlideDots(false, 12)
                             ],
                           ),
                         )

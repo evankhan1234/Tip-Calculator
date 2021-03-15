@@ -320,7 +320,7 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               for (int i = 0; i < slideList.length; i++)
-                i == _currentPage ? SlideDots(true) : SlideDots(false),
+                i == _currentPage ? SlideDots(true, 10) : SlideDots(false, 10),
             ],
           )
         ],
