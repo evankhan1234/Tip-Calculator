@@ -37,8 +37,8 @@ class _HomeScreenItemsState extends State<HomeScreenItems> {
         slivers: [
           _header(size.height),
           _overView(size.height),
-          _buildYourOwnTest(size.height),
           _carousalSlider(),
+          _buildYourOwnTest(size.height),
           _dotSlider(),
           _reviewList(),
         ],
