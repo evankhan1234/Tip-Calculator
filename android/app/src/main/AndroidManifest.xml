@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.evan.tip_calculator">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="tip_calculator"
         android:icon="@mipmap/ic_launcher">

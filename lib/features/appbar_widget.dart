@@ -1,10 +1,11 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:tip_calculator/palette.dart';
 
 AppBar appBarMain(BuildContext context, String titleText) {
   return AppBar(
-    backgroundColor: const Color(0xFF40B7A9),
+    backgroundColor: Palette.primaryColor,
     title: Text(titleText),
     actions: [
       GestureDetector(

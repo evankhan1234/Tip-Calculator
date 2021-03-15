@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:tip_calculator/HomeScreen.dart';
 import 'package:tip_calculator/features/sign_up/LoginScreen.dart';
+import 'package:tip_calculator/palette.dart';
 class SignUpScreen extends StatefulWidget {
   @override
   _SignUpstate createState() => _SignUpstate();
@@ -63,11 +64,11 @@ class SignUpScreen extends StatefulWidget {
                                 borderRadius: BorderRadius.circular(29),
                               ),
                               child: TextField(
-                                cursorColor: const Color(0xFF40B7A9),
+                                cursorColor: Palette.primaryColor,
                                 decoration: InputDecoration(
                                   icon: Icon(
                                     Icons.person,
-                                    color: const Color(0xFF40B7A9),
+                                    color: Palette.primaryColor,
                                   ),
                                   hintText: "Enter Your Name",
                                   border: InputBorder.none,
@@ -92,11 +93,11 @@ class SignUpScreen extends StatefulWidget {
                                 borderRadius: BorderRadius.circular(29),
                               ),
                               child: TextField(
-                                cursorColor: const Color(0xFF40B7A9),
+                                cursorColor: Palette.primaryColor,
                                 decoration: InputDecoration(
                                   icon: Icon(
                                     Icons.email,
-                                    color: const Color(0xFF40B7A9),
+                                    color: Palette.primaryColor,
                                   ),
                                   hintText: "Enter Your Email",
                                   border: InputBorder.none,
@@ -121,11 +122,11 @@ class SignUpScreen extends StatefulWidget {
                                 borderRadius: BorderRadius.circular(29),
                               ),
                               child: TextField(
-                                cursorColor: const Color(0xFF40B7A9),
+                                cursorColor: Palette.primaryColor,
                                 decoration: InputDecoration(
                                   icon: Icon(
                                     Icons.lock,
-                                    color: const Color(0xFF40B7A9),
+                                    color: Palette.primaryColor,
                                   ),
                                   hintText: "Enter Your Password",
                                   border: InputBorder.none,
@@ -142,7 +143,7 @@ class SignUpScreen extends StatefulWidget {
                               borderRadius: BorderRadius.circular(29),
                               child: FlatButton(
                                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                                color: const Color(0xFF40B7A9),
+                                color: Palette.primaryColor,
 
                                 onPressed: () {  Navigator.pushReplacement(
                                     context, MaterialPageRoute(builder: (context) => HomeScreen())); },
@@ -159,7 +160,7 @@ class SignUpScreen extends StatefulWidget {
                             children: <Widget>[
                               Text(
                                 "Already have an Account ? ",
-                                style: TextStyle(color: const Color(0xFF40B7A9)),
+                                style: TextStyle(color: Palette.primaryColor),
                               ),
                               GestureDetector(
                                 onTap: () {
@@ -169,7 +170,7 @@ class SignUpScreen extends StatefulWidget {
                                 child: Text(
                                   "Sign In",
                                   style: TextStyle(
-                                    color: const Color(0xFF40B7A9),
+                                    color: Palette.primaryColor,
                                     fontWeight: FontWeight.bold,
 
                                   ),
